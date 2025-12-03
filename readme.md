@@ -22,7 +22,6 @@ graph BT
     classDef client fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
     classDef netAgent fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;
     classDef db fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
-    classDef compliance fill:#ffebee,stroke:#c62828,stroke-width:2px,stroke-dasharray: 5 5;
 	
 	
     %% USER SPACE
@@ -34,13 +33,15 @@ graph BT
     subgraph "Shared Web3"
         direction TB
 		
+        Sett[Settlement Node<br/><i>Payment and Exchange</i>]:::netAgent
+        Veri[Verification Node]:::netAgent
         AN[Agent Node<br/><i>Indipendend Agent</i>]:::netAgent
         Exec[Execution Node<br/><i>Compute / Script</i>]:::netAgent
-        Data[Data Node<br/><i>Public & Private Data</i>]:::db
+        Data[Data Node<br/><i>Structured Data, Private&Public</i>]:::db
         Rep[Reputation Node<br/><i>Quality Control</i>]:::db
         Reg[Registry Node<br/><i>Service Discovery</i>]:::db
-        State[State Node<br/><i>World Knowledge Graph</i>]:::db
-        Store[Storage Node<br/><i>Public & Private Data</i>]:::db
+        State[Shared Knowledge Node<br/><i>World Knowledge Graph</i>]:::db
+        Store[Storage Node<br/><i>Binary Data, Private&Public</i>]:::db
         ID[Identity Node<br/><i>DID</i>]:::db
     end
 	
@@ -70,7 +71,12 @@ graph BT
     
     Rep -.->|Feed Score| Reg
 	
+	Sett -->|Invoice| AN
+	Sett -->|Invoice| CA
+	
     User -->|Prompt| CA
+	
+	Veri -->|Report| CA
 	
     %% Legende
     linkStyle default stroke-width:1px,stroke:#333,fill:none;
