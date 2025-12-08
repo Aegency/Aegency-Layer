@@ -6,6 +6,9 @@
 
 Free and open "Decentralized AIs (DeAI)" and "Decentralized Physical Infrastructure Networks (DePIN)".
 
+**Software**
+Protocol to make any Web3 service usable.
+
 **Forum**
 
 https://discord.gg/3CEcMa9wex
